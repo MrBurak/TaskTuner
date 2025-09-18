@@ -1,0 +1,56 @@
+﻿<Window x:Class="TaskTuner.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TaskTuner"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="832" Width="1280"
+        WindowStartupLocation="CenterScreen"
+        >
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="80" />
+            <ColumnDefinition Width="435" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="140" />
+        </Grid.ColumnDefinitions>
+
+        <Rectangle Fill="{StaticResource AccentDark}" Grid.Column="0"></Rectangle>
+        <Rectangle Fill="{StaticResource TaskListBackGround}" Grid.Column="1"></Rectangle>
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="60" />
+                <RowDefinition Height="60" />
+                <RowDefinition Height="1*" />
+            </Grid.RowDefinitions>
+            <Label Grid.Row="0" 
+                   Content="TASKS" 
+                   Style="{StaticResource Heading1}" 
+                   VerticalAlignment="Center" 
+                   Margin="20 0 0 0"
+                   Padding="2" />
+            <Button Grid.Row="0" 
+                    VerticalAlignment="Center" 
+                    HorizontalAlignment="Right" 
+                    Height="40" 
+                    Width="50" 
+                    Margin="0 0 10 0"
+                    Style="{StaticResource RoundedAccentButton}" Click="Button_Click">
+                <Viewbox Width="20" Height="20">
+                    <Path Data="{StaticResource NewTaskIcon}" Fill="{StaticResource OnAccent}"></Path>
+                </Viewbox>
+            </Button>
+            <TextBox Grid.Row="1" Style="{StaticResource TextSearchBox}" Margin="20 0"></TextBox>
+            <Button Grid.Row="1" Style="{StaticResource SearchButton}">
+                <Viewbox Width="30" Height="30">
+                    <Path Data="{StaticResource TextSeachIcon}" Fill="{StaticResource Borders}"></Path>
+                </Viewbox>
+            </Button>
+            <Rectangle Grid.Row="1"></Rectangle>
+            <Rectangle Grid.Row="2"></Rectangle>
+        </Grid>
+        <Rectangle Fill="{StaticResource TaskStatusBackGround}" Grid.Column="3"></Rectangle>
+        
+    </Grid>
+</Window>
