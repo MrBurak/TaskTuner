@@ -11,6 +11,7 @@
   <ItemGroup>
     <Folder Include="Assets\Files\Data\" />
     <Folder Include="Assets\Files\Txt\" />
+    <Folder Include="Assets\Images\" />
     <Folder Include="DataService\" />
     <Folder Include="Services\" />
   </ItemGroup>

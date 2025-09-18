@@ -41,15 +41,78 @@
                     <Path Data="{StaticResource NewTaskIcon}" Fill="{StaticResource OnAccent}"></Path>
                 </Viewbox>
             </Button>
-            <TextBox Grid.Row="1" Style="{StaticResource TextSearchBox}" Margin="20 0"></TextBox>
+            <TextBox x:Name="TaskSearchBox" Grid.Row="1" Style="{StaticResource TextSearchBox}" Margin="20 0" Height="40"></TextBox>
+            <Label Grid.Row="1" 
+                   Content="Search Tasks...!" 
+                   IsHitTestVisible="False" 
+                   VerticalAlignment="Center" 
+                   Margin="37 0 0 0"
+                   Foreground="{StaticResource Borders}"
+                   Visibility="{Binding Text.IsEmpty, ElementName=TaskSearchBox, Converter={StaticResource BooleanToVisibilityConverter}}"
+                   ></Label>
             <Button Grid.Row="1" Style="{StaticResource SearchButton}">
                 <Viewbox Width="30" Height="30">
                     <Path Data="{StaticResource TextSeachIcon}" Fill="{StaticResource Borders}"></Path>
                 </Viewbox>
             </Button>
-            <Rectangle Grid.Row="1"></Rectangle>
-            <Rectangle Grid.Row="2"></Rectangle>
+            <ListView Grid.Row="2" Background="Transparent" BorderBrush="Transparent" Margin="0 20">
+                <ListViewItem>
+                    
+                </ListViewItem>
+            </ListView>
         </Grid>
+        <Grid Grid.Column="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="230" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="60" />
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" Margin="20">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="60" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="30" />
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" Text="Task Title" Style="{StaticResource TaskTitle}" VerticalAlignment="Center" />
+                <Border Grid.Row="0" HorizontalAlignment="Right" VerticalAlignment="Center" Padding="20 5" CornerRadius="5" Background="{StaticResource Importance-Citical}">
+                    <TextBlock Text="IMORTANT" Foreground="{StaticResource OnAccent}" FontWeight="Bold"></TextBlock>
+                </Border>
+                <ScrollViewer 
+                    Grid.Row="1"
+                    VerticalScrollBarVisibility="Auto"
+                    HorizontalScrollBarVisibility="Disabled"
+                    >
+                    <TextBlock 
+                        Text="Task Description" 
+                        FontSize="16" 
+                        Foreground="{StaticResource PlaceHolderText}" 
+                        Margin="0 20"/>
+                </ScrollViewer>
+
+                <Border Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center" Padding="20 3" CornerRadius="5" Background="{StaticResource AccentDark}">
+                    <TextBlock Text="10 Oct 1975" Foreground="{StaticResource OnAccent}" FontWeight="Bold"></TextBlock>
+                </Border>
+
+            </Grid>
+            <Grid Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="60" />
+                    <RowDefinition Height="1*" />
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" Text="Task Check List" Style="{StaticResource TaskTitle}" VerticalAlignment="Center" Margin="20 0 0 0"></TextBlock>
+                <ListView Grid.Row="1" Background="Transparent" BorderBrush="Transparent" Margin="0 20">
+                    <ListViewItem>
+
+                    </ListViewItem>
+                </ListView>
+            </Grid>
+            <Grid Grid.Row="2">
+                <Button Style="{StaticResource CompleteButton}" Content="Complete"></Button>
+                <Button Style="{StaticResource EditButton}" Content="Edit"></Button>
+                <Button Style="{StaticResource DeleteButton}" Content="Delete"></Button>
+            </Grid>
+        </Grid>
+        
         <Rectangle Fill="{StaticResource TaskStatusBackGround}" Grid.Column="3"></Rectangle>
         
     </Grid>

@@ -13,6 +13,8 @@
 
 
     <SolidColorBrush x:Key="Borders" Color="#ccc"></SolidColorBrush>
+    <SolidColorBrush x:Key="PlaceHolderText" Color="#868686"></SolidColorBrush>
+    
     
     <SolidColorBrush x:Key="DefaultText" Color="#474747"></SolidColorBrush>
 
@@ -28,4 +30,17 @@
     <SolidColorBrush x:Key="Status-Late" Color="#B46161"></SolidColorBrush>
     <SolidColorBrush x:Key="Status-Archived" Color="#C8A36C"></SolidColorBrush>
     <SolidColorBrush x:Key="Status-Deleted" Color="#606060"></SolidColorBrush>
+
+    <SolidColorBrush x:Key="Button.Complete" Color="#57B186"></SolidColorBrush>
+    <SolidColorBrush x:Key="Button.Complete.Over" Color="#4B886B"></SolidColorBrush>
+    <SolidColorBrush x:Key="Button.Complete.Click" Color="#9fD488"></SolidColorBrush>
+    
+    <SolidColorBrush x:Key="Button.Edit" Color="#848484"></SolidColorBrush>
+    <SolidColorBrush x:Key="Button.Edit.Over" Color="#676767"></SolidColorBrush>
+    <SolidColorBrush x:Key="Button.Edit.Click" Color="#BDBDBD"></SolidColorBrush>
+    
+    <SolidColorBrush x:Key="Button.Delete" Color="#A94949"></SolidColorBrush>
+    <SolidColorBrush x:Key="Button.Delete.Over" Color="#863636"></SolidColorBrush>
+    <SolidColorBrush x:Key="Button.Delete.Click" Color="#C18888"></SolidColorBrush>
+
 </ResourceDictionary>

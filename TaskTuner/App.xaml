@@ -6,10 +6,11 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="/Dictionaries/Colors.xaml"></ResourceDictionary>
-                <ResourceDictionary Source="/Dictionaries/Icons.xaml"></ResourceDictionary>
-                <ResourceDictionary Source="/Dictionaries/Styles.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="/Dictionaries/Colors.xaml"/>
+                <ResourceDictionary Source="/Dictionaries/Icons.xaml"/>
+                <ResourceDictionary Source="/Dictionaries/Styles.xaml"/>
             </ResourceDictionary.MergedDictionaries>
+            <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
         </ResourceDictionary>
     </Application.Resources>
 </Application>
