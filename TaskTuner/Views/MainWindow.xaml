@@ -4,11 +4,41 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TaskTuner"
+        xmlns:vm="clr-namespace:TaskTuner.ModelViews"
         mc:Ignorable="d"
         Title="MainWindow" Height="832" Width="1280"
+        MinWidth="1150" MinHeight="450"
         WindowStartupLocation="CenterScreen"
         >
+    <Window.DataContext>
+        <vm:MainWindowsViewModal />
+    </Window.DataContext>
+    <Window.Resources>
+        <Storyboard x:Key="SlideOnLoad">
+            <DoubleAnimation 
+                Storyboard.TargetProperty="Opacity"
+                From="0.0"
+                To="1.0"
+                Duration="0:0:1"
+                />
+            <ThicknessAnimation 
+                Storyboard.TargetProperty="Margin"
+                From="0 100 0 0"
+                To="0 0 0 0"
+                Duration="0:0:1"
+                                />
+
+
+        </Storyboard>
+    </Window.Resources>
     <Grid>
+        <Grid.Triggers>
+            <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+                <BeginStoryboard Storyboard="{StaticResource SlideOnLoad}">
+                    
+                </BeginStoryboard>
+            </EventTrigger>
+        </Grid.Triggers>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="80" />
             <ColumnDefinition Width="435" />
@@ -16,7 +46,25 @@
             <ColumnDefinition Width="140" />
         </Grid.ColumnDefinitions>
 
-        <Rectangle Fill="{StaticResource AccentDark}" Grid.Column="0"></Rectangle>
+        <Rectangle Fill="{StaticResource AccentDark}" Grid.Column="0" />
+        <StackPanel Margin="10 15 10 10">
+            <Button Style="{StaticResource NavBarButton}">
+                <Viewbox Width="30" Height="30">
+                    <Path Data="{StaticResource TaskListIcon}" Fill="{StaticResource OnAccent}"></Path>
+                </Viewbox>
+            </Button>
+            <Button Style="{StaticResource NavBarButton}">
+                <Viewbox Width="30" Height="30">
+                    <Path Data="{StaticResource TaskOkIcon}" Fill="{StaticResource OnAccent}"></Path>
+                </Viewbox>
+            </Button>
+            <Button Style="{StaticResource NavBarButton}">
+                <Viewbox Width="30" Height="30">
+                    <Path Data="{StaticResource TaskTimer}" Fill="{StaticResource OnAccent}"></Path>
+                </Viewbox>
+            </Button>
+        </StackPanel>
+
         <Rectangle Fill="{StaticResource TaskListBackGround}" Grid.Column="1"></Rectangle>
         <Grid Grid.Column="1">
             <Grid.RowDefinitions>
@@ -36,7 +84,7 @@
                     Height="40" 
                     Width="50" 
                     Margin="0 0 10 0"
-                    Style="{StaticResource RoundedAccentButton}" Click="Button_Click">
+                    Style="{StaticResource RoundedAccentButton}" Command="{Binding IOpenNewWindow}">
                 <Viewbox Width="20" Height="20">
                     <Path Data="{StaticResource NewTaskIcon}" Fill="{StaticResource OnAccent}"></Path>
                 </Viewbox>
@@ -113,7 +161,26 @@
             </Grid>
         </Grid>
         
-        <Rectangle Fill="{StaticResource TaskStatusBackGround}" Grid.Column="3"></Rectangle>
+        <Grid Background="{StaticResource TaskStatusBackGround}" Grid.Column="3">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="230"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="140"/>
+            </Grid.RowDefinitions>
+            <Viewbox Grid.Row="0" Width="25" Height="25">
+            <Path Data="{StaticResource TaskTimer}" Fill="{StaticResource Borders}"></Path>
+            </Viewbox>
+            <Button Grid.Row="1" Style="{StaticResource PauseButton}" BorderBrush="Black">
+                <Viewbox Width="16" Height="16" >
+                    <Path Data="{StaticResource TaskPauseIcon}" Fill="{StaticResource OnAccent}"></Path>
+                </Viewbox>
+            </Button>
+            <Button Grid.Row="1" Style="{StaticResource ResumeButton}">
+                <Viewbox>
+                    <Path Data="{StaticResource TaskResumeIcon}" Fill="{StaticResource OnAccent}"></Path>
+                </Viewbox>
+            </Button>
+        </Grid>
         
     </Grid>
 </Window>

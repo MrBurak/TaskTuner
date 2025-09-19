@@ -2,4 +2,9 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <PathGeometry x:Key="NewTaskIcon" Figures="M18.192 19.385v-3h-3v-1h3v-3h1v3h3v1h-3v3h-1ZM1.808 20V4h16v6h-1V7.385h-14V19h13v1h-14Zm1-13.615h14V5h-14v1.385Zm0 0V5v1.385Z"></PathGeometry>
     <PathGeometry x:Key="TextSeachIcon" Figures="m19.485 20.154l-6.262-6.262q-.75.639-1.725.989q-.975.35-1.96.35q-2.402 0-4.066-1.663q-1.664-1.664-1.664-4.065T5.47 5.436q1.663-1.667 4.064-1.667q2.402 0 4.068 1.664q1.666 1.664 1.666 4.067q0 1.042-.369 2.017q-.37.975-.97 1.668l6.262 6.261l-.707.708ZM9.538 14.23q1.99 0 3.361-1.37q1.37-1.37 1.37-3.361q0-1.99-1.37-3.36q-1.37-1.37-3.36-1.37q-1.99 0-3.361 1.37q-1.37 1.37-1.37 3.36q0 1.99 1.37 3.36q1.37 1.37 3.36 1.37Z"></PathGeometry>
+    <PathGeometry x:Key="TaskResumeIcon" Figures="M3.78 2L3 2.41v12l.78.42l9-6V8l-9-6zM4 13.48V3.35l7.6 5.07L4 13.48z" />
+    <PathGeometry x:Key="TaskPauseIcon" Figures="M11 17V7H8v10h3Zm5 0V7h-3v10h3Z"/>
+    <PathGeometry x:Key="TaskTimer" Figures="M16.32 7.1A8 8 0 1 1 9 4.06V2h2v2.06c1.46.18 2.8.76 3.9 1.62l1.46-1.46l1.42 1.42l-1.46 1.45zM10 18a6 6 0 1 0 0-12a6 6 0 0 0 0 12zM7 0h6v2H7V0zm5.12 8.46l1.42 1.42L10 13.4L8.59 12l3.53-3.54z" />
+    <PathGeometry x:Key="TaskListIcon" Figures="M224 128a8 8 0 0 1-8 8H40a8 8 0 0 1 0-16h176a8 8 0 0 1 8 8ZM40 72h176a8 8 0 0 0 0-16H40a8 8 0 0 0 0 16Zm176 112H40a8 8 0 0 0 0 16h176a8 8 0 0 0 0-16Z" />
+    <PathGeometry x:Key="TaskOkIcon" Figures="M1179 72Q929 294 579 822l-115 179Q320 821 0 501l107-107l286 250q150-150 279-271.5T877.5 185T1009 74t77-59l21-14q4 0 11 2t26 19.5t35 49.5z" />
 </ResourceDictionary>

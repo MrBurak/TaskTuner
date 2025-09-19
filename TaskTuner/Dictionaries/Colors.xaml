@@ -43,4 +43,19 @@
     <SolidColorBrush x:Key="Button.Delete.Over" Color="#863636"></SolidColorBrush>
     <SolidColorBrush x:Key="Button.Delete.Click" Color="#C18888"></SolidColorBrush>
 
+    <SolidColorBrush x:Key="Button.Resume" Color="#57B186"></SolidColorBrush>
+    <SolidColorBrush x:Key="Button.Resume.Over" Color="#4B886B"></SolidColorBrush>
+    <SolidColorBrush x:Key="Button.Resume.Click" Color="#9fD488"></SolidColorBrush>
+
+    <SolidColorBrush x:Key="Button.Pause" Color="#848484"></SolidColorBrush>
+    <SolidColorBrush x:Key="Button.Pause.Over" Color="#676767"></SolidColorBrush>
+    <SolidColorBrush x:Key="Button.Pause.Click" Color="#BDBDBD"></SolidColorBrush>
+
+    <SolidColorBrush x:Key="NavBar" Color="Transparent"></SolidColorBrush>
+    <SolidColorBrush x:Key="NavBar.Over" Color="#396A84"></SolidColorBrush>
+    <SolidColorBrush x:Key="NavBar.Click" Color="#396A84"></SolidColorBrush>
+
+    <SolidColorBrush  x:Key="TaskListUCText" Color="#838383"></SolidColorBrush>
+    <SolidColorBrush  x:Key="TaskListUCTitle" Color="#707070"></SolidColorBrush>
+
 </ResourceDictionary>
