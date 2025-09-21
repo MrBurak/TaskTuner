@@ -8,6 +8,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TaskTuner.ModelViews;
 
 namespace TaskTuner
 {
@@ -19,6 +20,7 @@ namespace TaskTuner
         public MainWindow()
         {
             InitializeComponent();
+            this.DataContext = new MainWindowsViewModal();
         }
 
         

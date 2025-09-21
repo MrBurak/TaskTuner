@@ -23,7 +23,19 @@
                 <ColumnDefinition Width="450" />
                 <ColumnDefinition Width="150" />
             </Grid.ColumnDefinitions>
-            <TextBox Grid.Column="0" Style="{StaticResource FormTextBox}" Width="Auto"  />
+            <TextBox Grid.Column="0" 
+                     x:Name="txtTitle"
+                     Style="{StaticResource FormTextBox}" 
+                     Width="Auto" 
+                     Text="{Binding Title, UpdateSourceTrigger=PropertyChanged}"  />
+            <Label Grid.Row="1" 
+           Content="Title" 
+           IsHitTestVisible="False" 
+           VerticalAlignment="Center" 
+           Margin="10 0 0 0"
+           Foreground="{StaticResource Borders}"
+           Visibility="{Binding Text.IsEmpty, ElementName=txtTitle, Converter={StaticResource BooleanToVisibilityConverter}}"
+           />
             <ComboBox Grid.Column="1" Style="{StaticResource FormCombo}" HorizontalAlignment="Right" Width="150"></ComboBox>
         </Grid>
         
@@ -31,7 +43,19 @@
         <!-- Task Description -->
         <TextBox Grid.Row="1" Style="{StaticResource FormTextBox}" 
                  AcceptsReturn="True" TextWrapping="Wrap" 
-                 VerticalScrollBarVisibility="Auto" />
+                 VerticalScrollBarVisibility="Auto" 
+                 x:Name="txtDescrition"
+                 Text="{Binding Description, UpdateSourceTrigger=PropertyChanged}"
+                 
+                 />
+        <Label Grid.Row="1" 
+        Content="Description" 
+        IsHitTestVisible="False" 
+        VerticalAlignment="Top" 
+        Margin="10 0 0 0"
+        Foreground="{StaticResource Borders}"
+        Visibility="{Binding Text.IsEmpty, ElementName=txtDescrition, Converter={StaticResource BooleanToVisibilityConverter}}"
+        />
         <Grid Grid.Row="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="550" />
@@ -52,7 +76,7 @@
         <!-- Due Date and Time -->
         <StackPanel Grid.Row="4" Orientation="Horizontal" Margin="10,10,0,0">
             <TextBlock Text="Due:" VerticalAlignment="Center" Margin="0,0,5,0" />
-            <DatePicker Width="120"/>
+            <DatePicker Width="120" Text="{Binding DueDate, UpdateSourceTrigger=PropertyChanged}"/>
             <ComboBox Width="60" Margin="5,0" Style="{StaticResource FormCombo}">
                 <!-- Hours -->
                 <ComboBoxItem Content="1"/>
@@ -87,7 +111,11 @@
                   Content="Include Timer (You can time how long a project takes with a stop watch.)"/>
         <CheckBox Grid.Row="6" Margin="10,5,0,0"
                   Content="Add task to your calendar"/>
-        <Button Grid.Row="7" Style="{StaticResource CompleteButton}">Add Task</Button>
+        <Button Grid.Row="7" 
+                Style="{StaticResource CompleteButton}"
+                Content="Add Task"
+                Command="{Binding IAddNewTask}"
+                />
 
     </Grid>
 </Window>

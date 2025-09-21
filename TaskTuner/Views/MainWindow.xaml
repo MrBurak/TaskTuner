@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:TaskTuner"
+        xmlns:local="clr-namespace:TaskTuner.Views"
         xmlns:vm="clr-namespace:TaskTuner.ModelViews"
         mc:Ignorable="d"
         Title="MainWindow" Height="832" Width="1280"
@@ -85,6 +85,9 @@
                     Width="50" 
                     Margin="0 0 10 0"
                     Style="{StaticResource RoundedAccentButton}" Command="{Binding IOpenNewWindow}">
+                <Button.DataContext>
+                    <vm:MainWindowsViewModal />
+                </Button.DataContext>
                 <Viewbox Width="20" Height="20">
                     <Path Data="{StaticResource NewTaskIcon}" Fill="{StaticResource OnAccent}"></Path>
                 </Viewbox>
@@ -103,11 +106,18 @@
                     <Path Data="{StaticResource TextSeachIcon}" Fill="{StaticResource Borders}"></Path>
                 </Viewbox>
             </Button>
-            <ListView Grid.Row="2" Background="Transparent" BorderBrush="Transparent" Margin="0 20">
-                <ListViewItem>
-                    
-                </ListViewItem>
+            <ListView Grid.Row="2"
+          Background="Transparent"
+          BorderBrush="Transparent"
+          Margin="0 20"
+          ItemsSource="{Binding Tasks}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <local:TaskListItem />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
             </ListView>
+
         </Grid>
         <Grid Grid.Column="2">
             <Grid.RowDefinitions>
